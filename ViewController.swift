@@ -24,6 +24,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupConstraints()
+    }
+    
+    func databaseFill(){
         functions.httpsCallable("setupStocks").call(["stockDict" : stockDict]) { (result, error) in
             if let error = error as NSError?{
                 if error.domain == FunctionsErrorDomain{
